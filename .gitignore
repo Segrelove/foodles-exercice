@@ -1,0 +1,7 @@
+## This file instructs git to not push useless or sensitive code on your repository
+## For example, if you store secret API Keys inside your .env file,
+## you really don't want to whole world to see theme. 
+
+.byebug_history
+
+.env
