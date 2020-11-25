@@ -1,10 +1,8 @@
-# Virgin Ruby Repository
-
-This repository is a virgin template to create a Ruby program !
+# Response to the exercice for Foodles !
 
 ### Set up instructions
 
-1. Fork this repo
-2. Clone your version of the repo to your local machine
-3. On your local machine, `cd` into the root folder of this repo in your terminal
-4. `bundle install`!
+1. Clone your version of the repo to your local machine
+2. On your local machine, `cd` into the root folder of this repo in your terminal
+3. Then run `<bundle install>`!
+4. and `<rspec>`
