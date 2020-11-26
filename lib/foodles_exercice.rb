@@ -20,9 +20,20 @@ def word_frequency(sentence, number)
 
   duplicate_hash = Hash.new(0)
 
-  arr = sentence.split(" ")
+  splitted_sentence = sentence.split(" ")
 
-  arr.each { |name| duplicate_hash[name] += 1 }
-  
-  duplicate_hash.sort_by {|k, v| v}.reverse[0..number - 1]
+  splitted_sentence.each { |name| duplicate_hash[name] += 1 }
+
+  result = []
+  1.upto(duplicate_hash.values.max) do |i|
+    hash = {}
+    duplicate_hash.select {|k, v| hash[k] = v if v == i }
+    result.push(hash.sort_by {|k, v| k}.to_h) unless hash.empty?
+  end
+  result.reverse.reduce({}, :merge).to_a[0..number - 1]
 end
+
+p word_frequency("baz bar foo foo zblah zblah zblah baz toto toto bar arb xoz paz", 10)
+p word_frequency("baz bar foo foo zblah zblah zblah baz toto toto bar", 3)
+p word_frequency("baz bar foo foo zblah zblah zblah baz toto toto bar", 5)
+p word_frequency("baz bar foo foo zblah zblah zblah baz toto toto bar", 7)
