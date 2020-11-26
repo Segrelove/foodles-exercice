@@ -16,7 +16,7 @@
 
 
 def word_frequency(sentence, number)
-  return nil if !sentence.is_a?(String) || !number.is_a?(Integer)
+  return nil if !sentence.is_a?(String) || !number.is_a?(Integer) || sentence.split.empty?
 
   duplicate_hash = Hash.new(0)
 
@@ -37,3 +37,4 @@ p word_frequency("baz bar foo foo zblah zblah zblah baz toto toto bar arb xoz pa
 p word_frequency("baz bar foo foo zblah zblah zblah baz toto toto bar", 3)
 p word_frequency("baz bar foo foo zblah zblah zblah baz toto toto bar", 5)
 p word_frequency("baz bar foo foo zblah zblah zblah baz toto toto bar", 7)
+p word_frequency(" ", 7)
